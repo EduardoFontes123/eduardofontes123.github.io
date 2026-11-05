@@ -1,14 +1,18 @@
 ---
 title: "Problem 2"
-output: html_document
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    source_code: embed
 ---
 ### Setup
 ```{r, message=FALSE}
 library(tidyverse)
 library(p8105.datasets)
 library(readxl)
-
 library(plotly)
+library(flexdashboard)
 ```
 
 ```{r data_import}
@@ -20,20 +24,88 @@ data_dictionary =
             na = c("", "NA", ".")) |> 
   janitor::clean_names() 
 
-rest_inspec_p2 = 
+manhattan_inspections = 
   rest_inspec |> 
-  select(camis, boro, cuisine_description, critical_flag, score, latitude, longitude) |> 
+  mutate(inspection_date = as.Date(inspection_date)) |> 
   filter(
-    !is.na(critical_flag),
-    boro == "Manhattan")
+    boro == "Manhattan",
+    !is.na(score), score >= 0,
+    inspection_date >= as.Date("2027-01-01"),
+    inspection_date < as.Date("2019-10-01")) |> 
+  distinct(camis, inspection_date, .keep_all = TRUE) |> 
+  mutate(
+    dba = str_to_title(dba),
+    cuisine = str_replace(cuisine_description, "^Latin. *", "Latin")) |> 
+  select(camis, dba, cuisine, inspection_date, inspection_type, score, grade, latitude, longitude)
 ```
 
-### Scatterplot
+### Most recent letter grade for each Manhattan restaurant
 ```{r scatterplot}
-rest_inspec_p2 |>
+latest_grade = 
+  manhattan_inspections |> 
+  filter(grade %in% c("A", "B", "C"), latitude > 40) |> 
+  group_by(camis) |> 
+  slice_max(inspection_date, n = 1, with_ties = FALSE) |>
+  ungroup() |> 
+  mutate(
+    grade = factor(grade, levels = c("A", "B", "C")),
+    text_label = str_c(dba, "<br>", cuisine, "<br>Score: ", score, " | Grade: ", grade))
+
+latest_grade |> 
   plot_ly(
-    x = ~latitude, y = ~longitude, type = "scatter", mode = "markers",
-    color = ~cuisine_description, alpha = 0.5
-  )
+    x = ~longitude, y = ~latitude, color = ~grade, text = ~text_label,
+    colors = c("orchid", "plum", "pink"),
+    type = "scatter", mode = "markers", hoverinfo = "text",
+    marker = list(size = 4, opacity = 0.6)) |> 
+  layout(
+    xaxis = list(title = "Longitude"),
+    yaxis = list(title = "Latitude", scaleanchor = "x", scaleratio = 1.32),
+    legend = list(title = list(text = "Grade")))
+```
+
+### Inspection scores for the 10 most common cuisines
+```{r boxplot}
+top_cuisines = 
+  manhattan_inspections |> 
+  count(cuisine, sort = TRUE) |> 
+  slice_head(n = 10) |> 
+  pull(cuisine)
+
+manhattan_inspections |> 
+  filter(cuisine %in% top_cuisines) |> 
+  mutate(cuisine = fct_reorder(cuisine, score, .fun = mean)) |> 
+  plot_ly(
+    x = ~cuisine, y = ~score, color = ~cuisine,
+    type = "box", colors = "viridis") |>
+  layout(
+    showlegend = FALSE,
+    xaxis = list(title = ""),
+    yaxis = list(title = "Inspection score"))
+```
+
+### Average monthly score (initial inspections vs. re-inspections)
+```{r lineplot}
+manhattan_inspections |>
+  filter(inspection_type %in% c("Cycle Inspection / Initial Inspection",
+                                "Cycle Inspection / Re-inspection")) |>
+  mutate(
+    month = lubridate::floor_date(inspection_date, "month"),
+    inspection_type = str_remove(inspection_type, "Cycle Inspection / ")) |>
+  group_by(month, inspection_type) |>
+  summarize(
+    mean_score = mean(score),
+    n_inspections = n(),
+    .groups = "drop") |>
+  mutate(text_label = str_c(format(month, "%b %Y"), "<br>Mean score: ",
+                                   round(mean_score, 1), "<br>",
+                                   n_inspections, "inspections")) |>
+  plot_ly(
+    x = ~month, y = ~mean_score, color = ~inspection_type, text = ~text_label,
+    colors = c("blue", "magenta"),
+    type = "scatter", mode = "lines+markers", hoverinfo = "text") |>
+  layout(
+    xaxis = list(title = ""),
+    yaxis = list(title = "Mean inspection score"),
+    legend = list(orientation = "h", y = -0.15))
 ```
 
