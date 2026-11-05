@@ -1,0 +1,19 @@
+---
+title: "Dhriti's Website"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: yeti
+---
+# Welcome to Dhriti's website!
+
+## Task List
+1. create a personal website
+2. brief introductory landing page
+3. page with academic and professional experience
+4. links in site nav for GH account, email, and prof networks (linkedin?)
+
+[GitHub Account](https://github.com/di2251)
+[Email](di2251@cumc.columbia.edu)
+[LinkedIn](www.linkedin.com/in/dhritiiyer) 
