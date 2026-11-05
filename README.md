@@ -1,1 +1,2 @@
-# dhriti-iyer.github.io
+### dhriti-iyer.github.io
+Note: Displays commits from both user wahoodhriti and di2251. Unsure how to fix the issue but both accounts are mine! I sent a slack message in one of the earlier weeks but was unable to resolve the issue.
