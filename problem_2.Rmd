@@ -30,12 +30,12 @@ manhattan_inspections =
   filter(
     boro == "Manhattan",
     !is.na(score), score >= 0,
-    inspection_date >= as.Date("2027-01-01"),
+    inspection_date >= as.Date("2017-01-01"),
     inspection_date < as.Date("2019-10-01")) |> 
   distinct(camis, inspection_date, .keep_all = TRUE) |> 
   mutate(
     dba = str_to_title(dba),
-    cuisine = str_replace(cuisine_description, "^Latin. *", "Latin")) |> 
+    cuisine = str_replace(cuisine_description, "^Latin.*", "Latin")) |> 
   select(camis, dba, cuisine, inspection_date, inspection_type, score, grade, latitude, longitude)
 ```
 
@@ -54,7 +54,7 @@ latest_grade =
 latest_grade |> 
   plot_ly(
     x = ~longitude, y = ~latitude, color = ~grade, text = ~text_label,
-    colors = c("orchid", "plum", "pink"),
+    colors = c("steelblue1", "seagreen", "hotpink1"),
     type = "scatter", mode = "markers", hoverinfo = "text",
     marker = list(size = 4, opacity = 0.6)) |> 
   layout(
@@ -101,7 +101,7 @@ manhattan_inspections |>
                                    n_inspections, "inspections")) |>
   plot_ly(
     x = ~month, y = ~mean_score, color = ~inspection_type, text = ~text_label,
-    colors = c("blue", "magenta"),
+    colors = c("plum", "lightskyblue"),
     type = "scatter", mode = "lines+markers", hoverinfo = "text") |>
   layout(
     xaxis = list(title = ""),
