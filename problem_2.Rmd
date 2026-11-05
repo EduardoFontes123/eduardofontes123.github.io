@@ -6,7 +6,34 @@ output: html_document
 ```{r, message=FALSE}
 library(tidyverse)
 library(p8105.datasets)
+library(readxl)
 
 library(plotly)
+```
+
+```{r data_import}
+data("rest_inspec")
+
+data_dictionary = 
+  read_xlsx("data/rest_inspec_data_dictionary.xlsx",
+            skip = 2,
+            na = c("", "NA", ".")) |> 
+  janitor::clean_names() 
+
+rest_inspec_p2 = 
+  rest_inspec |> 
+  select(camis, boro, cuisine_description, critical_flag, score, latitude, longitude) |> 
+  filter(
+    !is.na(critical_flag),
+    boro == "Manhattan")
+```
+
+### Scatterplot
+```{r scatterplot}
+rest_inspec_p2 |>
+  plot_ly(
+    x = ~latitude, y = ~longitude, type = "scatter", mode = "markers",
+    color = ~cuisine_description, alpha = 0.5
+  )
 ```
 
