@@ -4,19 +4,11 @@ output:
   html_document:
     toc: true
     toc_float: true
-    theme: yeti
 ---
-# Welcome to my website!
+## Welcome to my website!
 
 My name is Dhriti and I am a second-year MPH student at Mailman. I have a cat named Rosie:
 
 ![](images/Rosie.jpeg)
 
 My interests lie in the intersection of addiction and mental health services and public health.
-
-[About Me](about.html)
-
-
-[GitHub](https://github.com/di2251)
-[Email](mailto:di2251@cumc.columbia.edu)
-[LinkedIn](www.linkedin.com/in/dhritiiyer) 

@@ -4,7 +4,6 @@ output:
   html_document:
     toc: true
     toc_float: true
-    theme: yeti
 ---
 ### Education
 **Columbia University, Mailman School of Public Health** \
@@ -52,7 +51,3 @@ output:
 
 ### Relevant Skills
 Microsoft Office, Canva, Epic, Practice Fusion, STATA, Python, RStudio, and Qualtrics
-
-[GitHub](https://github.com/di2251)
-[Email](mailto:di2251@cumc.columbia.edu)
-[LinkedIn](www.linkedin.com/in/dhritiiyer) 
