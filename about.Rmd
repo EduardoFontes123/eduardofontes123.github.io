@@ -7,17 +7,51 @@ output:
     theme: yeti
 ---
 ### Education
-**Columbia University, Mailman School of Public Health**
-*Master of Public Health in Population and Family Health*
+**Columbia University, Mailman School of Public Health** \
+*Master of Public Health in Population and Family Health* \
 *Certificate in Chronic Disease Epidemiology*
 
-**University of California, Irvine**
+**University of California, Irvine** \
 *Bachelor of Science in Public Health Sciences* 
 
-```{r, echo=FALSE, out.width="100%}
-knitr::include_graphics("Resume.pdf")
-```
+### Clinical & Research Experience
+**Sanctuary for Families** \
+*Health Policy and Research Intern* \
+* Conducted a scoping review of existing research on U.S. forced marriage and translated findings into updated educational training materials for service providers and healthcare professionals \
+* Supported legislative advocacy for the federal child marriage bill through local government and community partners \
+* Drafted a proposal for a qualitative study on U.S. survivor support systems and gaps in available resources
 
+**Surfside Urgent Care of Laguna Beach** \
+*Medical Assistant* \
+* Roomed patients and collected vitals, chief complaints, and medical histories in a high-volume urgent care setting \
+* Assisted providers with minor procedures, injections, and phlebotomy while maintaining accurate clinical documentation and supporting patient flow \
+
+**South County Kidney and Endocrine** \
+*Medical Assistant & Research Assistant* \
+* Collected vitals and medical histories and reconciled medications during patient intake \
+* Evaluated existing CKD patient education programs and recommended changes to improve accessibility for underserved patient populations
+
+**Newport Healthcare** \
+*Client Care Coordinator* \
+* Conducted intake, vital sign collection, and medication distribution at a residential facility for co-occurring substance use and mental health disorders \
+* Collaborated with multidisciplinary care teams on treatment planning and continuity of care
+
+**An Lanh Free Clinic Project** \
+*Media and Marketing Board Member & Medical Assistant* \
+* Designed marketing graphics and redesigned the clinic website to improve community outreach and access to patient health education resources \
+* Relaunched clinic YouTube channel to share medical and treatment information during COVID-19 \
+* Volunteered at workshops expanding higher education access for underserved high school students \
+* Supported community-based efforts to reduce health and information access barriers
+
+**Hopfer Lab** \
+*Research Assistant* \
+* Developed semi-structured interview guides and conducted in-depth interviews on HPV vaccine communication among Vietnamese American young adults \
+* Transcribed interviews, cleaned qualitative and quantitative datasets, and assisted in thematic coding and mixed-methods analysis \
+* Contributed to interpretation of findings on social networks, peer influence, and prevention health behaviors \
+* Conducted in-depth qualitative interviews with study participants
+
+### Relevant Skills
+Microsoft Office, Canva, Epic, Practice Fusion, STATA, Python, RStudio, and Qualtrics
 
 [GitHub](https://github.com/di2251)
 [Email](mailto:di2251@cumc.columbia.edu)
