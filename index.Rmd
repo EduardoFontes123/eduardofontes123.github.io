@@ -1,19 +1,22 @@
 ---
-title: "Dhriti's Website"
+title: "Dhriti's Corner"
 output: 
   html_document:
     toc: true
     toc_float: true
     theme: yeti
 ---
-# Welcome to Dhriti's website!
+# Welcome to my website!
 
-## Task List
-1. create a personal website
-2. brief introductory landing page
-3. page with academic and professional experience
-4. links in site nav for GH account, email, and prof networks (linkedin?)
+My name is Dhriti and I am a second-year MPH student at Mailman. I have a cat named Rosie:
 
-[GitHub Account](https://github.com/di2251)
-[Email](di2251@cumc.columbia.edu)
+![](images/Rosie.jpeg)
+
+My interests lie in the intersection of addiction and mental health services and public health.
+
+[About Me](about.html)
+
+
+[GitHub](https://github.com/di2251)
+[Email](mailto:di2251@cumc.columbia.edu)
 [LinkedIn](www.linkedin.com/in/dhritiiyer) 
