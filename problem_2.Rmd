@@ -6,7 +6,6 @@ output:
     vertical_layout: fill
     source_code: embed
 ---
-### Setup
 ```{r, message=FALSE}
 library(tidyverse)
 library(p8105.datasets)
