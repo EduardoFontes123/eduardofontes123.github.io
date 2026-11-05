@@ -2,4 +2,11 @@
 title: "Problem 2"
 output: html_document
 ---
+### Setup
+```{r, message=FALSE}
+library(tidyverse)
+library(p8105.datasets)
+
+library(plotly)
+```
 
