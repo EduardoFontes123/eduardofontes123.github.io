@@ -1,0 +1,24 @@
+---
+title: "About Me"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: yeti
+---
+### Education
+**Columbia University, Mailman School of Public Health**
+*Master of Public Health in Population and Family Health*
+*Certificate in Chronic Disease Epidemiology*
+
+**University of California, Irvine**
+*Bachelor of Science in Public Health Sciences* 
+
+```{r, echo=FALSE, out.width="100%}
+knitr::include_graphics("Resume.pdf")
+```
+
+
+[GitHub](https://github.com/di2251)
+[Email](mailto:di2251@cumc.columbia.edu)
+[LinkedIn](www.linkedin.com/in/dhritiiyer) 
